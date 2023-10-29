@@ -1,5 +1,5 @@
 [meta]
-  title = "Deepgram Django Starter"
+  title = "Prerecorded Django Starter"
   description = "Basic demo for using Deepgram to transcribe files with Django"
   author = "Deepgram DX Team <devrel@deepgram.com> (https://developers.deepgram.com)"
   useCase = "Prerecorded"
