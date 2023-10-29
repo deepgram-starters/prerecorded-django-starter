@@ -8,7 +8,9 @@ deepgram-sdk==2.11.0
 Django==4.2.3
 frozenlist==1.4.0
 idna==3.4
+load-dotenv==0.1.0
 multidict==6.0.4
+python-dotenv==1.0.0
 sqlparse==0.4.4
 typing_extensions==4.8.0
 websockets==12.0
