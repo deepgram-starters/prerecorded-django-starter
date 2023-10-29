@@ -1,1 +1,16 @@
+aiohttp==3.8.6
+aiosignal==1.3.1
+asgiref==3.7.2
+async-timeout==4.0.3
+attrs==23.1.0
+charset-normalizer==3.3.1
+deepgram-sdk==2.11.0
 Django==4.2.3
+frozenlist==1.4.0
+idna==3.4
+multidict==6.0.4
+sqlparse==0.4.4
+typing_extensions==4.8.0
+websockets==12.0
+whitenoise==6.6.0
+yarl==1.9.2

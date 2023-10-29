@@ -37,7 +37,33 @@ DEEPGRAM_API_KEY=%api_key%
 The `dev` script will run a web and API server concurrently. Once running, you can [access the application in your browser](http://localhost:8080/).
 
 ```bash
-python ./app.py runserver localhost:8080
+DEBUG=True python ./app.py runserver localhost:8080
+```
+
+## Setting up a Python developer environment
+
+Install `virtualenv`.
+
+```bash
+pip install virtualenv
+```
+
+Create a virtual environment.
+
+```bash
+python -m venv env
+```
+
+Activate the environment.
+
+```bash
+source env/bin/activate
+```
+
+Then install your dependencies with pip and they will be installed in the virtual environment rather than your user.
+
+```bash
+pip install -r requirements.txt
 ```
 
 ## What is Deepgram?

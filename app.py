@@ -1,17 +1,17 @@
 import os
 import sys
+import json
 
 from django.conf import settings
 from django.core.wsgi import get_wsgi_application
-from django.http import JsonResponse
-from django.urls import path, re_path
+from django.http import JsonResponse, HttpResponseBadRequest
+from django.urls import path
 from django.utils.crypto import get_random_string
-from django.conf.urls.static import static
 from django.shortcuts import render
+from whitenoise import WhiteNoise
 
 settings.configure(
-    MEDIA_URL="/",
-    MEDIA_ROOT="static/",
+    ALLOWED_HOSTS=["localhost"],
     DEBUG=(os.environ.get("DEBUG", "") == "1"),
     ROOT_URLCONF=__name__,
     SECRET_KEY=get_random_string(40),
@@ -21,6 +21,12 @@ settings.configure(
             "DIRS": ["static"],
         },
     ],
+    MIDDLEWARE=[
+        "whitenoise.middleware.WhiteNoiseMiddleware",
+    ],
+    STATIC_URL="/",
+    STATIC_ROOT="static/",
+    STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage",
 )
 
 
@@ -28,15 +34,23 @@ def index(request):
     return render(request, "index.html")
 
 
-def transcribe(request):
-    return JsonResponse({"data": "test2"})
+async def transcribe(request):
+    if request.method == "POST":
+        return JsonResponse({"data": "test2"})
+    else:
+        return HttpResponseBadRequest("Invalid HTTP method")
 
 
-urlpatterns = [path("", index), re_path(r"^api/?$", transcribe)] + static(
-    settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
-)
+def json_abort(message):
+    return HttpResponseBadRequest(json.dumps({"err": str(message)}))
+
+
+urlpatterns = [
+    path("api", transcribe, name="transcribe"),
+]
 
 app = get_wsgi_application()
+app = WhiteNoise(app, root="static/", prefix="/")
 
 if __name__ == "__main__":
     from django.core.management import execute_from_command_line
