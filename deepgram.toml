@@ -1,3 +1,11 @@
+[meta]
+  title = "Deepgram Django Starter"
+  description = "Basic demo for using Deepgram to transcribe files with Django"
+  author = "Deepgram DX Team <devrel@deepgram.com> (https://developers.deepgram.com)"
+  useCase = "Prerecorded"
+  language = "Python"
+  framework = "Django"
+  
 [build]
   command = "pip install -r requirements.txt"
 
