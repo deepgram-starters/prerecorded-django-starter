@@ -1,6 +1,6 @@
 # Deepgram Django Starter
 
-This sample demonstrates interacting with the Deepgram API from Django. It uses the Deepgram Python SDK, with a javascript client built from web components (no `npm` requirements).
+This sample demonstrates interacting with the Deepgram API from Django to make transcriptions of prerecorded files. It uses the Deepgram Python SDK, with a javascript client built from web components (no `npm` requirements).
 
 ## Sign-up to Deepgram
 
@@ -14,7 +14,7 @@ Follow these steps to get started with this starter application.
 
 #### Clone the repository
 
-Go to GitHub and [clone the repository](https://github.com/deepgram-starters/deepgram-python-django-starter).
+Go to GitHub and [clone the repository](https://github.com/deepgram-starters/prerecorded-django-starter).
 
 #### Install dependencies
 
@@ -37,7 +37,7 @@ DEEPGRAM_API_KEY=%api_key%
 The `dev` script will run a web and API server concurrently. Once running, you can [access the application in your browser](http://localhost:8080/).
 
 ```bash
-DEBUG=True python ./app.py runserver localhost:8080
+python ./app.py runserver localhost:8080
 ```
 
 ## Setting up a Python developer environment
@@ -86,7 +86,7 @@ Before you start, it's essential to generate a Deepgram API key to use in our st
 
 ## Issue Reporting
 
-If you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. The [Security Policy](./.github/SECURITY.md) details the procedure for contacting Deepgram.
+If you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. The [Security Policy](./SECURITY.md) details the procedure for contacting Deepgram.
 
 ## Author
 

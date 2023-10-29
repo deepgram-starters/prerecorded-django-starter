@@ -6,4 +6,4 @@
   output = ".env"
 
 [post-build]
-  message = "Run `python app.py runserver localhost:8080` to get up and running."
+  message = "Run `python ./app.py runserver localhost:8080` to get up and running."
