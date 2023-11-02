@@ -5,7 +5,7 @@ async-timeout==4.0.3
 attrs==23.1.0
 charset-normalizer==3.3.1
 deepgram-sdk==2.11.0
-Django==4.2.3
+Django==4.2.7
 frozenlist==1.4.0
 idna==3.4
 load-dotenv==0.1.0
